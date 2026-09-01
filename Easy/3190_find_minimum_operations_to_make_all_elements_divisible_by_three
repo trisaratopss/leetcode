@@ -1,0 +1,20 @@
+class Solution(object):
+    def minimumOperations(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+
+        # Store the total number of operations needed
+        total = 0
+
+        # Loop through each number in nums
+        for i in nums:
+            # Find how far i is from the nearest multiple of 3.
+            # i % 3 gives the operations needed by subtracting,
+            # while 3 - (i % 3) gives the operations needed by adding.
+            # Take the smaller of the two.
+            total = total + min((i % 3), 3 - (i % 3))
+
+        # Return the minimum total number of operations
+        return total
