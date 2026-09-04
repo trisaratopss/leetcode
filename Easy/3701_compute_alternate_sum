@@ -1,0 +1,24 @@
+class Solution(object):
+    def alternatingSum(self, nums):
+        """
+        :type nums: List[int]
+        :rtype: int
+        """
+
+        # Initialize the alternating sum at 0
+        sum = 0
+
+        # Loop through every index in nums
+        for i in range(len(nums)):
+
+            # Check if the current index is even
+            # Even indices should be added to the sum
+            if i % 2 == 0:
+                sum = sum + nums[i]
+
+            # If the index is odd, subtract the element instead
+            else:
+                sum = sum - nums[i]
+
+        # Return the final alternating sum
+        return sum
